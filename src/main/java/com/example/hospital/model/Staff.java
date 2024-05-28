@@ -1,7 +1,6 @@
 package com.example.hospital.model;
 
 import java.util.Date;
-
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
@@ -9,13 +8,15 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
-	    discriminatorType = DiscriminatorType.INTEGER,
+	    discriminatorType = DiscriminatorType.STRING,
 	    name = "staff_type"
 	)
 public abstract class Staff extends Person{
@@ -27,5 +28,5 @@ public abstract class Staff extends Person{
 	@ManyToOne
 	@JoinColumn(name = "department")
 	private Department department;
-
+	
 }

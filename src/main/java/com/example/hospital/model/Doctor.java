@@ -1,9 +1,11 @@
 package com.example.hospital.model;
 
 import jakarta.persistence.Entity;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Entity
 public abstract class Doctor extends OperationsStaff{
 
