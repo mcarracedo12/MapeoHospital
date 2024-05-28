@@ -1,4 +1,4 @@
-package com.example.hospital;
+package com.example.hospital.model;
 
 import jakarta.persistence.Embeddable;
 import lombok.Data;
@@ -7,11 +7,9 @@ import lombok.Setter;
 
 @Embeddable
 @Data
-@Getter
-@Setter
 public class Address {
 
 	private String streetName;
-	private int number;
+	private int streetNumber;
 	private String city;
 }

@@ -1,25 +1,21 @@
-package com.example.hospital;
+package com.example.hospital.model;
 import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 //import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @MappedSuperclass
-//@DiscriminatorColumn(name = "DTYPE")
 public abstract class Person {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private String id; // En el ejercicio pide que sea un String
 	private String title;
 	@Embedded
 	@Column(name = "name")
