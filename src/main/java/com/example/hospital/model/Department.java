@@ -1,6 +1,8 @@
 package com.example.hospital.model;
 import java.util.HashSet;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +22,7 @@ public class Department {
 	private String deptName;
 	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
 	private HashSet<Staff> staff;
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "hospital")
 	private Hospital hospital;
