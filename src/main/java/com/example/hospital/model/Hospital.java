@@ -31,7 +31,7 @@ public class Hospital {
         inverseJoinColumns = @JoinColumn(name = "staff_id")
     )
     private List<Staff> staff;
-	
+	/*
 	@JsonIgnore
 	@ManyToMany
     @JoinTable(
@@ -40,4 +40,5 @@ public class Hospital {
         inverseJoinColumns = @JoinColumn(name = "patient_id")
     )
     private List<Patient> patient;
+    */
 }

@@ -1,5 +1,6 @@
 package com.example.hospital.model;
 import java.util.HashSet;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -21,7 +22,7 @@ public class Department {
 	private Long Id;
 	private String deptName;
 	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
-	private HashSet<Staff> staff;
+	private List<Staff> staff;
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "hospital")
